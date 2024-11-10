@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    #score {
+        font-size: 7rem;
+        font-family: serif;
+    }
+    .gameEnd {
+        width: 50%;
+        margin-top: 2rem;
+        font-size: 4rem;
+        color: red;
+        text-align: center;
+        animation-name: game , zoom;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        animation-direction: alternate;
+    }
+    .gameEnd {
+        display: none
+    }
+    .gameEnd.active {
+        display: block;
+    }
+    @keyframes game {
+        0% {color: red;}
+        25% {color: purple;}
+        50% {color: black;}
+        75% {color: purple;}
+        100% {color: blue;}
+    }
+    @keyframes zoom {
+        0% {scale: .95;}
+        50% {scale: 1.25;}
+        100% {scale: 1;}
+    }
+</style>
+<body>
+    <div class="game-body">
+        <div id="score">0</div>
+        <canvas id="gameCanvas" width="300" height="300"></canvas>
+    </div>
+    <div class="gameEnd">
+        <span>Game Over</span>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
